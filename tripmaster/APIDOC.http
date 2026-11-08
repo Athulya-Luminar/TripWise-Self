@@ -1,0 +1,49 @@
+###
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username": "Anupriya",
+    "email": "anu@gmail.com",
+    "password": "anu@123"
+}    
+
+###
+GET http://127.0.0.1:8000/trips/
+Accept: application/json
+Authorization: Basic Anupriya:anu@123
+
+
+
+
+### 
+POST http://127.0.0.1:8000/trips/
+Content-Type: application/json
+Authorization: Basic Anupriya:anu@123
+
+{
+    "title": "Trip to Vagamon",
+    "destination": "Vagamon",
+    "start_date": "2026-11-25"
+}
+
+###
+GET http://127.0.0.1:8000/trips/1/
+Accept: application/json
+Authorization: Basic anjitha:anjitha@123
+
+###
+PUT http://127.0.0.1:8000/trips/1/
+Content-Type: application/json
+Authorization: Basic anjitha:anjitha@123
+
+{
+    "title": "Trip to Mysore",
+    "destination": "Mysore",
+    "start_date": "2026-11-22"
+}
+
+
+###
+DELETE http://127.0.0.1:8000/trips/2/
+Authorization: Basic Anupriya:anu@123
