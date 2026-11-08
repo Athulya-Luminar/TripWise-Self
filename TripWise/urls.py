@@ -22,7 +22,13 @@ from tripmaster import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', views.SignUpView.as_view()),
+    path('users/', views.UserListView.as_view()),
     path('trips/', views.TripListCreateView.as_view()),
     path('trips/<int:pk>/', views.TripRerieveUpdateDeleteView.as_view()),
+    
+    path('trips/<int:trip_id>/members/', views.TripMemberListCreateView.as_view()),
+    path('trips/<int:trip_id>/members/<int:member_id>/', views.TripMemberDeleteView.as_view()),
+    path( 'trips/<int:trip_id>/members/', views.TripMemberListView.as_view())
+
     
 ]

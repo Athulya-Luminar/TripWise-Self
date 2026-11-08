@@ -3,15 +3,19 @@ POST http://127.0.0.1:8000/register/
 Content-Type: application/json
 
 {
-    "username": "Anupriya",
-    "email": "anu@gmail.com",
-    "password": "anu@123"
+    "username": "Manju",
+    "email": "manju@gmail.com",
+    "password": "manju@123"
 }    
+
+###
+GET http://127.0.0.1:8000/users/
+Accept: application/json
 
 ###
 GET http://127.0.0.1:8000/trips/
 Accept: application/json
-Authorization: Basic Anupriya:anu@123
+Authorization: Basic Athulya:athulya@123
 
 
 
@@ -19,18 +23,18 @@ Authorization: Basic Anupriya:anu@123
 ### 
 POST http://127.0.0.1:8000/trips/
 Content-Type: application/json
-Authorization: Basic Anupriya:anu@123
+Authorization: Basic Athulya:athulya@123
 
 {
-    "title": "Trip to Vagamon",
-    "destination": "Vagamon",
+    "title": "Trip to Munnar",
+    "destination": "Munnar",
     "start_date": "2026-11-25"
 }
 
 ###
-GET http://127.0.0.1:8000/trips/1/
+GET http://127.0.0.1:8000/trips/4/
 Accept: application/json
-Authorization: Basic anjitha:anjitha@123
+Authorization: Basic Athulya:athulya@123
 
 ###
 PUT http://127.0.0.1:8000/trips/1/
@@ -45,5 +49,23 @@ Authorization: Basic anjitha:anjitha@123
 
 
 ###
-DELETE http://127.0.0.1:8000/trips/2/
+DELETE http://127.0.0.1:8000/trips/4/
 Authorization: Basic Anupriya:anu@123
+
+
+
+###
+POST http://127.0.0.1:8000/trips/5/members/
+Content-Type: application/json
+Authorization: Basic Athulya:athulya@123
+
+{
+    "username": "Anupriya"
+}
+
+
+###
+GET http://127.0.0.1:8000/trips/4/members/
+Accept: application/json
+Authorization: Basic Athulya:athulya@123
+
